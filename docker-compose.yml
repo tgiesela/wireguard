@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  server:
+    build: .
+    container_name: wireguard
+    image: tgiesela/wireguard:v0.1
+    volumes:
+      - /dockerdata/wireguard:/etc/wireguard
+      - /lib/modules:/lib/modules
+      - /usr/src:/usr/src
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE

@@ -1,4 +1,4 @@
-version: "3"
+version: '2'
 
 services:
   server:
@@ -14,3 +14,7 @@ services:
       - SYS_ADMIN
       - NET_ADMIN
       - SYS_MODULE
+    environment:
+      - TZ=Europe/Amsterdam
+    restart: always
+

@@ -36,3 +36,6 @@ Note:  the iptables script uses a devicename which depends on the os you
        are using. On a Rpi 4 is was enp0s3. You will have to change it to
        your devicename (replace eth0 by enp0s3 or similar)
 
+Note:  If the command iptables -L inside your docker reports that iptables-legacy
+       is present, replace the iptables commands in addrules  and deleterules by
+       iptables-legacy.

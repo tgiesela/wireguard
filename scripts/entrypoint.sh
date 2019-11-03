@@ -12,7 +12,9 @@ if [ "$1" = "run-server" ]; then
 	make && make install
 	cp -r /home/config/* ${wgdir}/
 	mkdir -p ${wgdir}/server
-        wg genkey | tee ${wgdir}/server/key.priv | wg pubkey > ${wgdir}/server/key.pub
+	if [ ! -f ${wgdir}/server/key.priv ]; then
+	        wg genkey | tee ${wgdir}/server/key.priv | wg pubkey > ${wgdir}/server/key.pub
+	fi
 	key=$(cat ${wgdir}/server/key.priv)
 	sed -i 's|:SERVER_PRIVKEY:|'"$key"'|' ${wgdir}/wg0.conf
 

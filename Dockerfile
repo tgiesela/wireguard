@@ -1,4 +1,3 @@
-#FROM debian:stretch
 FROM debian:latest
 MAINTAINER Tonny Gieselaar <tonny@devosverzuimbeheer.nl>
 

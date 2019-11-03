@@ -11,5 +11,6 @@ services:
       - /usr/src:/usr/src
     network_mode: host
     cap_add:
+      - SYS_ADMIN
       - NET_ADMIN
       - SYS_MODULE

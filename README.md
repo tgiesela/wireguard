@@ -32,3 +32,7 @@ it in config/wg0.conf and in config/client.conf. You also need to change the
 endpoint here. This should reflect the internet-address to which the clients 
 should connect.
 
+Note:  the iptables script uses a devicename which depends on the os you
+       are using. On a Rpi 4 is was enp0s3. You will have to change it to
+       your devicename (replace eth0 by enp0s3 or similar)
+

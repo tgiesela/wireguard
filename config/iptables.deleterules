@@ -1,4 +1,4 @@
-iptables -D FORWARD -i wg0 -o enp0s3 -s 10.8.8.0/24 -d 10.56.57.0/24 -m conntrack --ctstate NEW -j ACCEPT; 
+iptables -D FORWARD -i wg0 -o eth0 -s 10.8.8.0/24 -d 10.56.57.0/24 -m conntrack --ctstate NEW -j ACCEPT; 
 iptables -D FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT; 
-iptables -t nat -D POSTROUTING -o enp0s3 -s 10.8.8.0/24 -j MASQUERADE;
+iptables -t nat -D POSTROUTING -o eth0 -s 10.8.8.0/24 -j MASQUERADE;
 

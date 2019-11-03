@@ -1,6 +1,6 @@
 #!/bin/bash
 configdir=/etc/wireguard/
-
+FQDN=<your-external-hostname>
 if [ $# -eq 0 ]
 then
 	echo "must pass a client name as an arg: $0 new-client"

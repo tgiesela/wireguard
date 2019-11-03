@@ -34,9 +34,6 @@ if [ "$1" = "run-server" ]; then
     shutdown() {
         echo "Stopping wireguard"
         wg-quick down $config
-        rmmod wireguard
-        echo "Uninstalling dkms module"
-        dkms uninstall wireguard/$MODULE_VERSION
         exit 0
     }
     trap shutdown SIGINT SIGTERM SIGQUIT

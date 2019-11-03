@@ -1,4 +1,4 @@
-version: "3"
+version: '2'
 
 services:
   server:
@@ -13,3 +13,7 @@ services:
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
+    environment:
+      - TZ=Europe/Amsterdam
+    restart: always
+

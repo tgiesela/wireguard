@@ -14,7 +14,7 @@ else
 	serverkey=$(cat ${configdir}/server/key.pub)
 
 	ip="10.8.8."$(expr $(cat last-ip.txt | tr "." " " | awk '{print $4}') + 1)
-	FQDN=gieselaar.ddns.net
+
 	cat client.conf | sed -e 's/:CLIENT_IP:/'"$ip"'/' | \
 			  sed -e 's|:CLIENT_KEY:|'"$key"'|' | \
 			  sed -e 's|:SERVER_PUBKEY:|'"$serverkey"'|' | \

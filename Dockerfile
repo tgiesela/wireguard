@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:stretch
 MAINTAINER Tonny Gieselaar <tonny@devosverzuimbeheer.nl>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -37,8 +37,9 @@ RUN echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.li
 #RUN add-apt-repository ppa:wireguard/wireguard
 RUN apt-get update && \
     apt-get upgrade -y && \
+    apt-get upgrade -y gcc-8-base && \
 #    apt-get install -y linux-headers-$(uname -r) &&\
-#    apt-get install -y raspberrypi-kernel-headers && \
+#    apt-get install -y linux-headers-generic && \
     apt-get clean && rm -rf /var/lib/apt/lists/* 
 #    dkms uninstall wireguard/$(dkms status | awk -F ', ' '{ print $2 }')
 

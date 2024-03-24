@@ -6,9 +6,9 @@ services:
     container_name: wireguard
     image: tgiesela/wireguard:v0.1
     volumes:
-      - /dockerdata/wireguard:/etc/wireguard
-      - /lib/modules:/lib/modules
-      - /usr/src:/usr/src
+      - /docker/data/wireguard:/etc/wireguard
+#      - /lib/modules:/lib/modules
+#      - /usr/src:/usr/src
     network_mode: host
     cap_add:
       - SYS_ADMIN

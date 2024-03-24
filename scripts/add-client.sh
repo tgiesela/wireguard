@@ -18,7 +18,7 @@ else
 	cat client.conf | sed -e 's/:CLIENT_IP:/'"$ip"'/' | \
 			  sed -e 's|:CLIENT_KEY:|'"$key"'|' | \
 			  sed -e 's|:SERVER_PUBKEY:|'"$serverkey"'|' | \
-			  sed -e 's|:SERVER_ADDRESS:|'"$FQDN"'|' > clients/$1/wg0.conf
+			  sed -e 's|:SERVER_ADDRESS:|'"$FQDN"'|' > ${configdir}/clients/$1/wg0.conf
 	echo $ip > last-ip.txt
 
  	echo "Created config!"

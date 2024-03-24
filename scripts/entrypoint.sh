@@ -6,10 +6,10 @@ if [ "$1" = "run-server" ]; then
 
     if [ ! -f ${wgdir}/.alreadyconfigured ] ; then
 	echo "Configuring server"
-	cp -r /home/config/. /etc/wireguard/
+	cp -r /home/config/. ${wgdir}/
 
-	cd /home/WireGuard/src
-	make && make install
+#	cd /home/WireGuard/src
+#	make && make install
 	cp -r /home/config/* ${wgdir}/
 	mkdir -p ${wgdir}/server
 	if [ ! -f ${wgdir}/server/key.priv ]; then
